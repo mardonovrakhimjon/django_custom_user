@@ -17,14 +17,14 @@ from .permissions import IsAdmin, IsUser, IsUserOrIsAdmin
 
 class RegisterView(APIView):
 
-    def post(self, request: Request) -> Response:
-        serializer = RegisterUserSerializer(data=request.data)
+    def post(self, reqeust: Request) -> Response:
+        serializer = RegisterUserSerializer(data=reqeust.data)
         serializer.is_valid(raise_exception=True)
 
         validated_data = serializer.validated_data
 
-        email = validated_data["email"]
-        username = validated_data["username"]
+        email=validated_data['email'],
+        username=validated_data['username'],
 
         # User mavjudligini tekshirish
         if User.objects.filter(email=email).exists():
@@ -34,7 +34,7 @@ class RegisterView(APIView):
                 },
                 status=status.HTTP_400_BAD_REQUEST,
             )
-
+            
         if User.objects.filter(username=username).exists():
             return Response(
                 {
@@ -83,7 +83,7 @@ class RegisterView(APIView):
         send_mail(
             subject="Tasdiqlash",
             message=plain_message,
-            from_email="djumanovdev@gmail.com",
+            from_email="mardonovrakhimjon004@gmail.com",
             recipient_list=[user.email],
             html_message=html_message,
             fail_silently=False,
@@ -162,3 +162,4 @@ class AddItemView(APIView):
 
     def post(self, reqeust: Request) -> Response:
         return Response({'message': 'ok'})
+        

@@ -5,11 +5,11 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     class Roles(models.TextChoices):
-        admin = 'admin', 'Admin'
-        user = 'user', 'User'
+        admin = "admin", "Admin"
+        user = "user", "User"
 
     is_verified = models.BooleanField(default=False)
-    role        = models.TextField(max_length=20, choices=Roles, default=Roles.user)
+    role        = models.TextField(max_length=20, choices=Roles.choices, default=Roles.user)
 
     def __str__(self):
         return self.username

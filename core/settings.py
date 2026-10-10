@@ -150,11 +150,11 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 # Authentication credentials
-EMAIL_HOST_USER = 'djumanovdev@gmail.com'
+EMAIL_HOST_USER = 'mardonovrakhimjon004@gmail.com'
 EMAIL_HOST_PASSWORD = env('EMAIL_PASSWORD')
 
 # Default from email address used in your app
-DEFAULT_FROM_EMAIL = 'djumanovdev@gmail.com'
+DEFAULT_FROM_EMAIL = 'mardonovrakhimjon004@gmail.com'
 
 
 REST_FRAMEWORK = {
@@ -166,8 +166,8 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Django API DOCS',
-    'DESCRIPTION': 'organish uchun',
+    'DESCRIPTION': 'organush uchun',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
-    # OTHER SETTINGS
+    #Other settings
 }
